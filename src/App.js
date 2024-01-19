@@ -127,14 +127,21 @@ return (
         <div className="overflow-y-auto max-h-[300px]">
           {renderTodoList()}
         </div>
-        <div className="flex justify-between px-5 items-center h-14 ">
+        {darkMode ? ( <div className="flex justify-between px-5 items-center h-14 ">
           <p className='text-[20px] font-bold'>Total: {getTodoCount("all")} items</p>
           <p className='text-[20px] font-bold'>Active: {getTodoCount("active")} items</p>
           <p className='text-[20px] font-bold'>Completed: {getTodoCount("completed")} items</p>
           <p className='text-[20px] font-bold w-[200px] h-[50px] bg-blue-200 flex justify-center item-center border-2 border-black rounded'><button onClick={clearCompletedTodos} type="button">
             Clear Completed
           </button></p>
-        </div>
+        </div>):(<div className="flex justify-between px-5 items-center h-14 ">
+          <p className='text-[20px] font-bold'>Total: {getTodoCount("all")} items</p>
+          <p className='text-[20px] font-bold'>Active: {getTodoCount("active")} items</p>
+          <p className='text-[20px] font-bold'>Completed: {getTodoCount("completed")} items</p>
+          <p className='text-[20px] font-bold w-[200px] h-[50px] bg-blue-200 flex justify-center item-center border-2 border-black rounded'><button onClick={clearCompletedTodos} type="button">
+            Clear Completed
+          </button></p>
+        </div>)}
       </div>
     </div>
   </div>
